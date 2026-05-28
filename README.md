@@ -8,6 +8,31 @@ Official React Native SDK for the HayBTech Payment Gateway -- integrate mobile m
 
 ---
 
+
+## Intégration par IA (Prompt pour Marchands)
+
+Si vous utilisez un assistant IA (comme Cursor, GitHub Copilot, ChatGPT, Claude, etc.), vous pouvez copier-coller le prompt suivant pour intégrer ce SDK de A à Z dans votre projet :
+
+```text
+Agis en tant qu'expert React Native. Je souhaite intégrer le SDK React Native de HayBTech (`@haybtech/react-native`) pour intégrer la passerelle de paiement dans mon application mobile de A à Z.
+
+Voici ma stack technique actuelle :
+- Framework : [ex: Expo, React Native CLI]
+- State Management : [ex: Redux Toolkit, Zustand, Context API]
+
+*Note de sécurité : L'initiation se fait via le serveur marchand backend pour protéger les clés secrètes.*
+
+Tâches à accomplir dans le code généré :
+1. **Appel API Backend** : Coder la requête réseau (Axios ou Fetch) pour appeler mon backend (en lui passant les informations de commande) et récupérer la session de paiement.
+2. **Composant Checkout** : Créer un écran ou modal utilisant `react-native-webview` (ou le composant officiel du SDK) pour charger l'URL de paiement HayBTech de manière fluide.
+3. **Capture des événements de navigation (Navigation State Change)** : Intercepter les redirections du WebView vers les URLs de succès et d'échec pour fermer la modale de paiement et naviguer vers les écrans correspondants de mon application.
+4. **Vérification de sécurité** : Interroger mon backend après la transaction pour s'assurer que le webhook a bien validé la transaction avant d'attribuer le produit à l'utilisateur.
+
+Génère du code TypeScript propre, moderne, commenté et fonctionnel.
+```
+
+---
+
 ## SECURITY WARNING
 
 **NEVER use your Secret Key (`sk_...`) in a React Native app.**
@@ -147,6 +172,5 @@ export default MyPaymentScreen;
 | Android SDK          | 21+     |
 | iOS                  | 12.0+   |
 
----
-
 MIT License
+
